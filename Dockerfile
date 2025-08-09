@@ -12,8 +12,10 @@ COPY . .
 
 RUN npm run build
 
-# Debug: list files in dist
+# Debug: list files
 RUN ls -l /app/dist
+RUN ls -la ./scripts
+
 
 EXPOSE 6969
 
