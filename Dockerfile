@@ -2,15 +2,17 @@ FROM node:18
 
 WORKDIR /app
 
-COPY package*.json ./
-
-RUN npm install --ignore-scripts
-
+# Copy everything including source code and scripts
 COPY . .
 
-RUN npm run generate-protocol
+# Install dependencies
+RUN npm install
+
+# Build project - this creates the dist folder
 RUN npm run build
 
 EXPOSE 6969
 
 CMD ["node", "dist/index.mjs"]
+
+RUN ls -l /app/dist
