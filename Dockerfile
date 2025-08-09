@@ -2,15 +2,13 @@ FROM node:18
 
 WORKDIR /app
 
-# Copy everything including source code and scripts
 COPY . .
 
-# Install dependencies
 RUN npm install
 
-# Build project - this creates the dist folder
 RUN npm run build
-RUN ls -l /app/dist
+
+RUN ls -l /app/dist  # <-- This line is for debugging in your build logs!
 
 EXPOSE 6969
 
