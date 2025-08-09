@@ -2,13 +2,18 @@ FROM node:18
 
 WORKDIR /app
 
-COPY . .
+# Copy only package files first for caching
+COPY package*.json ./
 
 RUN npm install
 
+# Copy all source files after install (make sure .dockerignore excludes node_modules and dist)
+COPY . .
+
 RUN npm run build
 
-RUN ls -l /app/dist  # <-- This line is for debugging in your build logs!
+# Debug: list files in dist
+RUN ls -l /app/dist
 
 EXPOSE 6969
 
