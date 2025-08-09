@@ -13,4 +13,4 @@ RUN npm run build
 
 EXPOSE 6969
 
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/index.mjs"]
