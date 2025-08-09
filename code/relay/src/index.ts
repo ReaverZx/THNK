@@ -160,6 +160,7 @@ app.ws<ClientUserData>("/:gameID/:roomID/join", {
   },
 });
 
-app.listen(6969, () => {
-  logger.info(`Server started`);
+const port = process.env.PORT || 6969;
+server.listen(port, () => {
+  console.log(`THNK Relay server listening on port ${port}`);
 });
