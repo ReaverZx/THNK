@@ -10,9 +10,8 @@ RUN npm install
 
 # Build project - this creates the dist folder
 RUN npm run build
+RUN ls -l /app/dist
 
 EXPOSE 6969
 
 CMD ["node", "dist/index.mjs"]
-
-RUN ls -l /app/dist
