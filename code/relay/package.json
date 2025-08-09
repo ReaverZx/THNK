@@ -8,7 +8,7 @@
     "tsup": "^6.5.0"
   },
   "scripts": {
-    "build": "tsup ./src/index.ts --format esm --minify --out-dir dist --out-file index.mjs"
+    "build": "tsup ./src/index.ts --format esm --minify"
   },
   "dependencies": {
     "pino": "^8.8.0",
